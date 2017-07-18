@@ -1,8 +1,7 @@
-import genesis
-import next_block as nb
+import chain
 
 # Create the blockchain and add the genesis block
-blockchain = [genesis.create_genesis_block()]
+blockchain = [chain.create_genesis_block()]
 previous_block = blockchain[0]
 
 # How many blocks should we add to the chain after the genesis block
@@ -10,7 +9,7 @@ num_of_blocks_to_add = 20
 
 # Add blocks to the chain
 for i in range(0, num_of_blocks_to_add):
-    block_to_add = nb.next_block(previous_block)
+    block_to_add = chain.next_block(previous_block)
     blockchain.append(block_to_add)
     previous_block = block_to_add
 
